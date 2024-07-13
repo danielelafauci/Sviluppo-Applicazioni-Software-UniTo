@@ -10,6 +10,7 @@ public class WorkShiftBoard {
     public void loadWorkshiftBoard() {shifts = Shift.loadAllShifts();}
 
     public ArrayList<Shift> getShifts() {
-        return shifts;
+       loadWorkshiftBoard();
+       return shifts;
     }
 }
