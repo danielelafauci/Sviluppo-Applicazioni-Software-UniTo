@@ -279,13 +279,13 @@ CREATE TABLE `summarysheets` (
 
 CREATE TABLE `tasks` (
   `id` int(11) NOT NULL,
-  `id_sheet` int(11) NOT NULL,
+  `id_summarysheet` int(11) NOT NULL,
   `position` int(11) NOT NULL,
   `id_cook` int(11) DEFAULT NULL,
   `id_shift` int(11) DEFAULT NULL,
   `id_recipe` int(11) NOT NULL,
   `timeEstimate` int(11) DEFAULT NULL,
-  `quantity` int(11) DEFAULT NULL,
+  `quantity` varchar(11) DEFAULT NULL,
   `completed` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
