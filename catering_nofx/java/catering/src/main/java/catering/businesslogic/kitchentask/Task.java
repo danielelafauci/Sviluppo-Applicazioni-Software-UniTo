@@ -155,6 +155,17 @@ public class Task {
         PersistenceManager.executeUpdate(query);
     }
 
-
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", timeEstimate=" + timeEstimate +
+                ", quantity=" + quantity +
+                ", completed=" + completed +
+                ", shiftAssigned=" + shiftAssigned +
+                ", cookAssigned=" + cookAssigned +
+                ", ktAssigned=" + ktAssigned +
+                '}';
+    }
 
 }
