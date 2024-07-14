@@ -23,6 +23,7 @@ public class TestCatERing6b {
             ServiceInfo service1 = ServiceInfo.loadServiceById(1);
             List<Shift> shifts = CatERing.getInstance().getShiftManager().getShifts();
 
+
             // TEST: start
             System.out.println("\n[TEST]: GENERATING SUMMARY SHEET");
             SummarySheet sheet1 = CatERing.getInstance().getTaskManager().generateSummarySheet(service1);
