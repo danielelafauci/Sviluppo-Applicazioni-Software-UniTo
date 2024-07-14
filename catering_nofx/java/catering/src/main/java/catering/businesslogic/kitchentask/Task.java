@@ -16,7 +16,7 @@ public class Task {
     private int id;
     private boolean completed;
     private int timeEstimate;
-    private int quantity;
+    private String quantity;
     private Shift shiftAssigned;
     private User cookAssigned;
     private KitchenTask ktAssigned;
@@ -48,7 +48,7 @@ public class Task {
         return timeEstimate;
     }
 
-    public int getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
@@ -60,7 +60,7 @@ public class Task {
         this.timeEstimate = timeEstimate;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 
@@ -76,9 +76,17 @@ public class Task {
         this.shiftAssigned = shiftAssigned;
     }
 
-    public void setDetails(int timeEstimate, int quantity) {
+    public void setDetails(int timeEstimate,String quantity) {
         this.setQuantity(quantity);
         this.setTimeEstimate(timeEstimate);
+    }
+
+    public void setDetails(int timeEstimate) {
+        this.setTimeEstimate(timeEstimate);
+    }
+
+    public void setDetails(String quantity) {
+        this.quantity = quantity;
     }
 
 
