@@ -39,9 +39,10 @@ public class TestCatERing {
         KitchenTask kitchenTask = new KitchenTask();
         kitchenTask.setAuthor(CatERing.getInstance().getUserManager().getCurrentUser());
         kitchenTask.setOwner(CatERing.getInstance().getUserManager().getCurrentUser());
-        kitchenTask.setName(CatERing.getInstance().getUserManager().getCurrentUser().getUserName());
+        kitchenTask.setName("LASAGNE ");
         kitchenTask.setDescription("TEST");
         kitchenTask.setPublished(true);;
+        System.out.println("NEW KITCHEN TASK " + kitchenTask);
         CatERing.getInstance().getTaskManager().addTask(kitchenTask);
         System.out.println(sheet);
 
@@ -70,8 +71,12 @@ public class TestCatERing {
         System.out.println(sheet);
 
         System.out.println("\n[TEST]: TASK INFO DEFINITION");
-        CatERing.getInstance().getTaskManager().setTaskDetails(sheet.getTasks().get(0), 90, 2);
 
+        CatERing.getInstance().getTaskManager().setTaskDetails(sheet.getTasks().get(0),90);
+        System.out.println(sheet);
+        CatERing.getInstance().getTaskManager().setTaskDetails(sheet.getTasks().get(0),"2");
+        System.out.println(sheet);
+        CatERing.getInstance().getTaskManager().setTaskDetails(sheet.getTasks().get(0), 100, "5");
         System.out.println(sheet);
     }
 }

@@ -35,12 +35,12 @@ public class TestCatERing6b {
             System.out.println(sheet1);
 
             System.out.println("\n[TEST]: TASK INFO DEFINITION");
-            CatERing.getInstance().getTaskManager().setTaskDetails(sheet1.getTasks().get(0), 90, 2);
+            CatERing.getInstance().getTaskManager().setTaskDetails(sheet1.getTasks().get(0), 90, "2");
 
             System.out.println(sheet1);
 
             System.out.println("\n[TEST]: EDIT TASK QUANTITY");
-            CatERing.getInstance().getTaskManager().editTaskQuantity(sheet1.getTasks().get(0), 5);
+            CatERing.getInstance().getTaskManager().editTaskQuantity(sheet1.getTasks().get(0), "5");
 
             System.out.println(sheet1);
             // TEST: end

@@ -34,7 +34,7 @@ public class TestCatERing2a {
             System.out.println(sheet1);
 
             System.out.println("\n[TEST]: TASK INFO DEFINITION");
-            CatERing.getInstance().getTaskManager().setTaskDetails(sheet1.getTasks().get(0), 90, 2);
+            CatERing.getInstance().getTaskManager().setTaskDetails(sheet1.getTasks().get(0), 90, "2");
 
             System.out.println("Before removing: " + sheet1);
 
@@ -43,10 +43,6 @@ public class TestCatERing2a {
 
             System.out.println("After removing: " + sheet1);
 
-            System.out.println("\n[TEST]: RESET SHEET");
-            CatERing.getInstance().getTaskManager().resetSummarySheet(sheet1);
-
-            System.out.println(sheet1);
             // TEST: end
 
         } catch (UseCaseLogicException | TaskException e) {

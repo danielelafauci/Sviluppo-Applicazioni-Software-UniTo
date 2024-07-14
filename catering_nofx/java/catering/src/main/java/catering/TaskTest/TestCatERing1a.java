@@ -28,6 +28,7 @@ public class TestCatERing1a {
 
             System.out.println("\nTEST OPEN SUMMARY SHEET");
             System.out.println("Open first sheet: \n" + CatERing.getInstance().getTaskManager().openSummarySheet(sheet1));
+            System.out.println("Open second sheet: \n" + CatERing.getInstance().getTaskManager().openSummarySheet(sheet2));
             // TEST: end
         } catch (TaskException e) {
             System.out.println("ERROR IN EXTENTION 1a");

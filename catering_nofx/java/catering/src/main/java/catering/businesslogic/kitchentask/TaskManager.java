@@ -150,12 +150,27 @@ public class TaskManager {
         notifyCookRemoved(toChange);
     }
 
-    public void setTaskDetails(Task toDetail, int timeEstimate, int quantity) throws UseCaseLogicException, TaskException {
+    public void setTaskDetails(Task toDetail, int timeEstimate,String quantity) throws UseCaseLogicException, TaskException {
         if (currentSummarySheet == null || !(currentSummarySheet.containsTask(toDetail)))
             throw new UseCaseLogicException();
         toDetail.setDetails(timeEstimate, quantity);
         notifyTaskDetailed(toDetail);
     }
+
+    public void setTaskDetails(Task toDetail, int timeEstimate) throws TaskException, UseCaseLogicException {
+        if (currentSummarySheet == null || !(currentSummarySheet.containsTask(toDetail)))
+            throw new UseCaseLogicException();
+        toDetail.setDetails(timeEstimate);
+        notifyTaskDetailed(toDetail);
+    }
+
+    public void setTaskDetails(Task toDetail, String quantity) throws TaskException, UseCaseLogicException {
+        if (currentSummarySheet == null || !(currentSummarySheet.containsTask(toDetail)))
+            throw new UseCaseLogicException();
+        toDetail.setDetails(quantity);
+        notifyTaskDetailed(toDetail);
+    }
+
 
     public void editTaskTimeEstimate(Task toChange, int timeEstimate) throws UseCaseLogicException {
         if (currentSummarySheet == null || !(currentSummarySheet.containsTask(toChange)))
@@ -166,7 +181,7 @@ public class TaskManager {
         notifyTaskTimeChanged(toChange);
     }
 
-    public void editTaskQuantity(Task toChange, int quantity) throws UseCaseLogicException {
+    public void editTaskQuantity(Task toChange, String quantity) throws UseCaseLogicException {
         if (currentSummarySheet == null || !(currentSummarySheet.containsTask(toChange)))
             throw new UseCaseLogicException();
 

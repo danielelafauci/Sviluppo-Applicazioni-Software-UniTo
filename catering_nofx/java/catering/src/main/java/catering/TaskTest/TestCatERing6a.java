@@ -35,7 +35,7 @@ public class TestCatERing6a {
             System.out.println(sheet1);
 
             System.out.println("\n[TEST]: TASK INFO DEFINITION");
-            CatERing.getInstance().getTaskManager().setTaskDetails(sheet1.getTasks().get(0), 90, 2);
+            CatERing.getInstance().getTaskManager().setTaskDetails(sheet1.getTasks().get(0), 90, "2");
 
             System.out.println(sheet1);
 
