@@ -145,7 +145,7 @@ public class SummarySheet {
         return "-SUMMARY SHEET-" +
                 "\n| ID: " +  id +
                 "\n| Creator: " + creator +
-                "\n| Tasks: " + tasks.toString()+
+                "\n| Tasks: " + tasks.toString() +
                 "\n| Service Assigned: " +  serviceAssigned +
                 "\n--------------";
     }
