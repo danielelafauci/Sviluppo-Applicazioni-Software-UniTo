@@ -32,7 +32,7 @@ CREATE TABLE `events` (
   `name` varchar(128) DEFAULT NULL,
   `date_start` date DEFAULT NULL,
   `date_end` date DEFAULT NULL,
-  `expected_participants` int(11) DEFAULT NULL,
+  `participants` int(11) DEFAULT NULL,
   `organizer_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -40,10 +40,10 @@ CREATE TABLE `events` (
 -- Dump dei dati per la tabella `events`
 --
 
-INSERT INTO `events` (`id`, `name`, `date_start`, `date_end`, `expected_participants`, `organizer_id`) VALUES
-(1, 'Convegno Agile Community', '2020-09-25', '2020-09-25', 100, 2),
-(2, 'Compleanno di Manuela', '2020-08-13', '2020-08-13', 25, 2),
-(3, 'Fiera del Sedano Rapa', '2020-10-02', '2020-10-04', 400, 1);
+INSERT INTO `events` (`id`, `name`, `date_start`, `date_end`, `participants`, `organizer_id`) VALUES
+(1, 'Convegno Agile Community', '2024-09-25', '2020-09-25', 100, 2),
+(2, 'Compleanno di Manuela', '2024-08-13', '2020-08-13', 25, 2),
+(3, 'Fiera del Sedano Rapa', '2024-10-02', '2020-10-04', 400, 1);
 
 -- --------------------------------------------------------
 
@@ -241,7 +241,7 @@ CREATE TABLE `services` (
   `service_date` date DEFAULT NULL,
   `time_start` time DEFAULT NULL,
   `time_end` time DEFAULT NULL,
-  `expected_participants` int(11) DEFAULT NULL,
+  `participants` int(11) DEFAULT NULL,
   `id_menu` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -249,7 +249,7 @@ CREATE TABLE `services` (
 -- Dump dei dati per la tabella `services`
 --
 
-INSERT INTO `services` (`id`, `event_id`, `name`, `proposed_menu_id`, `approved_menu_id`, `service_date`, `time_start`, `time_end`, `expected_participants`, `id_menu`) VALUES
+INSERT INTO `services` (`id`, `event_id`, `name`, `proposed_menu_id`, `approved_menu_id`, `service_date`, `time_start`, `time_end`, `participants`, `id_menu`) VALUES
 (1, 2, 'Cena', 86, 0, '2024-08-13', '20:00:00', '23:30:00', 25, 80),
 (2, 1, 'Coffee break mattino', 0, 80, '2024-09-25', '10:30:00', '11:30:00', 100, 82),
 (3, 1, 'Colazione di lavoro', 0, 0, '2024-09-25', '13:00:00', '14:00:00', 80, 86),
@@ -292,7 +292,7 @@ CREATE TABLE `tasks` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `turns`
+-- Struttura della tabella `shifts`
 --
 
 CREATE TABLE `shifts` (
@@ -307,11 +307,11 @@ CREATE TABLE `shifts` (
 -- Dump dei dati per la tabella `turns`
 --
 
-INSERT INTO `shifts` (`id`, `date`, `h_start`, `h_end`, `place`) VALUES
-(1, '2024-08-30', '09:00:00', '18:00:00', 'sede'),
-(2, '2024-08-30', '18:00:00', '23:00:00', 'sede'),
-(3, '2024-08-31', '09:00:00', '18:00:00', 'sede'),
-(4, '2024-08-31', '18:00:00', '23:00:00', 'sede');
+INSERT INTO `shifts` (`id`,`date`, `h_start`, `h_end`, `place`) VALUES
+(1,'2024-08-30', '09:00:00', '18:00:00', 'sede'),
+(2,'2024-08-30', '18:00:00', '23:00:00', 'sede'),
+(3,'2024-08-31', '09:00:00', '18:00:00', 'sede'),
+(4,'2024-08-31', '18:00:00', '23:00:00', 'sede');
 
 -- --------------------------------------------------------
 

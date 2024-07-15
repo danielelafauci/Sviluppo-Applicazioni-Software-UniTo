@@ -13,9 +13,11 @@ WHERE true;
 DELETE
 FROM catering.services
 WHERE true;
-
 DELETE
 FROM catering.summarysheets
+WHERE TRUE;
+DELETE
+FROM catering.events
 WHERE TRUE;
 
 DELETE
@@ -111,10 +113,11 @@ LOCK TABLES `catering`.shifts WRITE;
 /*!40000 ALTER TABLE `catering`.shifts
     DISABLE KEYS */;
 INSERT INTO `catering`.shifts (`id`, `date`, `h_start`, `h_end`, `place`) VALUES
-    (1, '2024-08-30', '09:00:00', '18:00:00', 'sede'),
-    (2, '2024-08-30', '18:00:00', '23:00:00', 'sede'),
-    (3, '2024-08-31', '09:00:00', '18:00:00', 'sede'),
-    (4, '2024-08-31', '18:00:00', '23:00:00', 'sede');
+ (1,'2024-08-30', '09:00:00', '18:00:00', 'sede'),
+ (2,'2024-08-30', '18:00:00', '23:00:00', 'sede'),
+ (3,'2024-08-31', '09:00:00', '18:00:00', 'sede'),
+ (4,'2024-08-31', '18:00:00', '23:00:00', 'sede');
+
 /*!40000 ALTER TABLE `catering`.shifts
     ENABLE KEYS */;
 UNLOCK TABLES;
@@ -123,7 +126,7 @@ UNLOCK TABLES;
 LOCK TABLES `catering`.services WRITE;
 /*!40000 ALTER TABLE `catering`.services
     DISABLE KEYS */;
-INSERT INTO `catering`.services (`id`, `event_id`, `name`, `proposed_menu_id`, `approved_menu_id`, `service_date`, `time_start`, `time_end`, `expected_participants`, `id_menu`)
+INSERT INTO `catering`.services (`id`, `event_id`, `name`, `proposed_menu_id`, `approved_menu_id`, `service_date`, `time_start`, `time_end`, `participants`, `id_menu`)
 VALUES
     (1, 2, 'Cena', 86, 0, '2024-08-13', '20:00:00', '23:30:00', 25, 80),
     (2, 1, 'Coffee break mattino', 0, 80, '2024-09-25', '10:30:00', '11:30:00', 100, 82),
@@ -137,4 +140,15 @@ VALUES
     ENABLE KEYS */;
 UNLOCK TABLES;
 
+LOCK TABLES `catering`.events WRITE;
+/*!40000 ALTER TABLE `catering`.events
+    DISABLE KEYS */;
+INSERT INTO `catering`.events(`id`, `name`, `date_start`, `date_end`, `participants`, `organizer_id`) VALUES
+(1, 'Convegno Agile Community', '2024-09-25', '2020-09-25', 100, 2),
+(2, 'Compleanno di Manuela', '2024-08-13', '2020-08-13', 25, 2),
+(3, 'Fiera del Sedano Rapa', '2024-10-02', '2020-10-04', 400, 1);
 
+
+/*!40000 ALTER TABLE `catering`.events
+    ENABLE KEYS */;
+UNLOCK TABLES;
