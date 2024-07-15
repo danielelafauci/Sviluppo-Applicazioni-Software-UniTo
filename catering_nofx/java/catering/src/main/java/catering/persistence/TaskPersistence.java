@@ -13,8 +13,7 @@ public class TaskPersistence implements TaskEventReceiver {
 
     public void updateTaskAdded(SummarySheet summarySheet, Task task){Task.saveNewTask(summarySheet.getId(), task, summarySheet.getTaskIndex(task));}
 
-    public void updateTaskDeleted(Task task) {Task.deleteTask(task);
-    }
+    public void updateTaskDeleted(Task task) {Task.deleteTask(task);}
 
     public void updateTaskSorted(SummarySheet sheet) {
         SummarySheet.sortTasks(sheet);

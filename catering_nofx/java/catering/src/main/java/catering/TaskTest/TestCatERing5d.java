@@ -21,7 +21,7 @@ public class TestCatERing5d {
             // LOADING DUMMY DATA
             Menu.loadAllMenus();
             ServiceInfo service1 = ServiceInfo.loadServiceById(1);
-            List<Shift> shifts = CatERing.getInstance().getShiftManager().getShifts();
+            List<Shift> shifts = CatERing.getInstance().getShiftManager().getWorkshiftBoard();
 
             // TEST: start
             System.out.println("\n[TEST]: GENERATING SUMMARY SHEET");

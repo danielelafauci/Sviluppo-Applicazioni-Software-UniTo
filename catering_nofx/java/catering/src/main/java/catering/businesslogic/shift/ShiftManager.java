@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class ShiftManager {
 
-
+    private WorkShiftBoard workShiftBoard;
 
     public ShiftManager() {
-        Shift.loadAllShifts();
+        this.workShiftBoard = new WorkShiftBoard();
     }
 
-    public ArrayList<Shift> getShifts(){ return Shift.getAllShifts();}
+    public ArrayList<Shift> getWorkshiftBoard(){ return workShiftBoard.getShifts();}
 }
 
 

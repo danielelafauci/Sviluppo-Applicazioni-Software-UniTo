@@ -53,7 +53,7 @@ public class TestCatERing {
         System.out.println(sheet);
 
         System.out.println("\n[TEST]: GET WORKSHIFTBOARD");
-        List<Shift> shifts = CatERing.getInstance().getShiftManager().getShifts();
+        List<Shift> shifts = CatERing.getInstance().getShiftManager().getWorkshiftBoard();
         System.out.println(shifts);
 
         System.out.println("\n[TEST]: TASK ASSIGNMENT (WITH COOK), FIRST TASK");

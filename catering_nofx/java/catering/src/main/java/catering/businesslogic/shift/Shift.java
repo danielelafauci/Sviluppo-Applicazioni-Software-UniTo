@@ -22,7 +22,8 @@ public class Shift {
         return id;
     }
 
-    public static ArrayList<Shift> loadAllShifts() {
+    public static Map<Integer,Shift> loadAllShifts() {
+        Map<Integer, Shift> shifts = new HashMap<>();
         String query = "SELECT * FROM Shifts";
         PersistenceManager.executeQuery(query, new ResultHandler() {
             @Override
@@ -33,14 +34,7 @@ public class Shift {
                 s.start = rs.getTime("h_start");
                 s.end = rs.getTime("h_end");
                 s.place = rs.getString("place");
-                all.put(s.id,s);
-            }
-        });
-        ArrayList<Shift> shifts = new ArrayList<>(all.values());
-        Collections.sort(shifts, new Comparator<Shift>() {
-            @Override
-            public int compare(Shift o1, Shift o2) {
-                return o1.date.compareTo(o2.date);
+                shifts.put(s.id,s);
             }
         });
         return shifts;
