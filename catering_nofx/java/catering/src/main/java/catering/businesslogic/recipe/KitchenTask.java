@@ -42,21 +42,7 @@ public class KitchenTask {
         return name;
     }
 
-    public boolean isPublished() {
-        return published;
-    }
 
-    public User getAuthor() {
-        return author;
-    }
-
-    public User getOwner() {
-        return owner;
-    }
-
-    public String getDescription() {
-        return description;
-    }
 
     @Override
     public String toString() {
